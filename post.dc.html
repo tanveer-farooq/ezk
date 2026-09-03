@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog | Education Zone Kashmir</title>
+<meta name="description" content="Guides on MBBS in Bangladesh for Indian students by Education Zone Kashmir.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fig-tokens.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/brand.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/styles.css">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important}[data-r="grid1"]{grid-template-columns:1fr!important}[data-r="h1"]{font-size:32px!important}}</style>
+</helmet>
+<dc-import name="site-header" active="blog" hint-size="100%,64px"></dc-import>
+<main>
+  <sc-if value="{{ notFound }}" hint-placeholder-val="{{ false }}">
+    <section style="max-width:800px;margin:0 auto;padding:64px 24px;display:flex;flex-direction:column;gap:20px">
+      <h1 style="margin:0;font-weight:500;font-size:36px;letter-spacing:-0.8px">Choose an article</h1>
+      <sc-for list="{{ all }}" as="a" hint-placeholder-count="0"><a href="{{ a.href }}" style="font-size:17px;padding:12px 0;border-bottom:1px solid rgb(231,230,223);color:rgb(18,18,18);text-decoration:none" style-hover="color:rgb(9,105,218)">{{ a.title }}</a></sc-for>
+    </section>
+  </sc-if>
+  <sc-if value="{{ found }}" hint-placeholder-val="{{ true }}">
+    <article>
+      <header style="background:rgb(245,244,240);border-bottom:1px solid rgb(211,210,205)">
+        <div style="max-width:800px;margin:0 auto;padding:48px 24px 40px;display:flex;flex-direction:column;gap:20px">
+          <nav aria-label="Breadcrumb" style="font-size:13px;color:rgb(102,102,102);display:flex;gap:8px;flex-wrap:wrap"><a href="home.dc.html" style="color:rgb(102,102,102);text-decoration:none" style-hover="text-decoration:underline">Home</a><span>/</span><a href="blog.dc.html" style="color:rgb(102,102,102);text-decoration:none" style-hover="text-decoration:underline">Blog</a><span>/</span><span style="color:rgb(18,18,18)">{{ category }}</span></nav>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">{{ category }} · {{ date }} · {{ minutes }} min read</span>
+          <h1 data-r="h1" style="margin:0;font-weight:500;font-size:42px;line-height:1.1;letter-spacing:-1px;text-wrap:pretty">{{ title }}</h1>
+          <p style="margin:0;font-size:18px;line-height:1.6;color:rgb(77,77,77);text-wrap:pretty">{{ excerpt }}</p>
+        </div>
+      </header>
+      <div style="max-width:800px;margin:0 auto;padding:40px 24px 0">
+        <div style="height:380px"><image-slot id="post-{{ id }}" shape="rounded" radius="7" placeholder="Drop a cover photo for this article"></image-slot></div>
+      </div>
+      <div style="max-width:800px;margin:0 auto;padding:40px 24px 64px;display:flex;flex-direction:column;gap:20px;font-size:17px;line-height:1.7;color:rgb(51,51,51)">
+        <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="8">
+          <sc-if value="{{ b.h }}" hint-placeholder-val="{{ false }}"><h2 style="margin:20px 0 0;font-weight:600;font-size:26px;line-height:1.25;letter-spacing:-0.5px;color:rgb(18,18,18)">{{ b.h }}</h2></sc-if>
+          <sc-if value="{{ b.p }}" hint-placeholder-val="{{ true }}"><p style="margin:0;text-wrap:pretty">{{ b.p }}</p></sc-if>
+          <sc-if value="{{ b.li }}" hint-placeholder-val="{{ false }}"><ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px"><sc-for list="{{ b.li }}" as="it" hint-placeholder-count="0"><li>{{ it }}</li></sc-for></ul></sc-if>
+          <sc-if value="{{ b.q }}" hint-placeholder-val="{{ false }}"><blockquote style="margin:0;padding:16px 24px;border-left:3px solid rgb(255,205,0);background:rgb(245,244,240);font-size:18px;font-style:italic">{{ b.q }}</blockquote></sc-if>
+        </sc-for>
+        <div data-r="stack" style="margin-top:24px;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;border:1px solid rgb(211,210,205)">
+          <div style="display:flex;flex-direction:column;gap:4px"><span style="font-size:14px;font-weight:600">Education Zone Kashmir counselling team</span><span style="font-size:13px;color:rgb(102,102,102);line-height:1.5">Authorized admission consultants for MBBS in Bangladesh, Parray Pora, Srinagar. Facts checked against the 2026–27 college fee sheet and current NMC/DGHS notifications.</span></div>
+          <button onClick="{{ copyLink }}" style="flex-shrink:0;height:36px;padding:0 14px;border:0;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1px rgb(212,212,212),0 1px 0 rgba(31,31,31,0.04);font-family:Manrope,sans-serif;font-size:13px;font-weight:600;color:rgb(18,18,18);cursor:pointer" style-hover="background:rgb(246,248,250)">{{ copyLabel }}</button>
+        </div>
+      </div>
+      <section style="background:rgb(18,18,18);color:#fff">
+        <div data-r="stack" style="max-width:1232px;margin:0 auto;padding:56px 24px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+          <div style="display:flex;flex-direction:column;gap:8px;max-width:640px"><h2 style="margin:0;font-weight:500;font-size:30px;letter-spacing:-0.6px;line-height:1.15">Questions about your own case?</h2><p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.72)">A free counselling call takes 20 minutes and ends with a shortlist of colleges that fit your marks and budget.</p></div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0"><a href="contact.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:6px;background:#fff;color:rgb(18,18,18);font-size:15px;font-weight:600;text-decoration:none" style-hover="background:rgb(245,244,240);text-decoration:none">Book free counselling</a><a href="colleges.dc.html" style="display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:6px;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.4);font-size:15px;font-weight:600;text-decoration:none" style-hover="background:rgba(255,255,255,0.08);text-decoration:none">Browse colleges</a></div>
+        </div>
+      </section>
+      <section style="padding:64px 0 96px">
+        <div style="max-width:1232px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:24px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Keep reading</span>
+          <div data-r="grid1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+            <sc-for list="{{ related }}" as="p" hint-placeholder-count="3">
+              <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:12px;padding:24px;background:#fff;border:1px solid rgb(211,210,205);text-decoration:none;color:rgb(18,18,18)" style-hover="background:rgb(246,248,250);text-decoration:none;color:rgb(18,18,18)">
+                <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">{{ p.category }} · {{ p.minutes }} min read</span>
+                <span style="font-size:19px;font-weight:600;line-height:1.3;text-wrap:pretty">{{ p.title }}</span>
+                <span style="font-size:14px;line-height:1.6;color:rgb(77,77,77)">{{ p.excerpt }}</span>
+              </a>
+            </sc-for>
+          </div>
+        </div>
+      </section>
+    </article>
+  </sc-if>
+</main>
+<dc-import name="site-footer" hint-size="100%,480px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { copied: false };
+  async componentDidMount() {
+    const B = await import(new URL('data/blog.js', document.baseURI).href);
+    this.B = B;
+    const id = new URLSearchParams(window.location.search).get('p');
+    this.post = B.postById(id) || null;
+    if (this.post) {
+      const p = this.post;
+      document.title = p.title + ' | Education Zone Kashmir';
+      const meta = document.querySelector('meta[name="description"]'); if (meta) meta.setAttribute('content', p.excerpt);
+      const kw = document.createElement('meta'); kw.name = 'keywords'; kw.content = p.keywords; document.head.appendChild(kw);
+      const ld = { '@context': 'https://schema.org', '@type': 'Article', headline: p.title, description: p.excerpt, datePublished: p.date, author: { '@type': 'Organization', name: 'Education Zone Kashmir' }, publisher: { '@type': 'Organization', name: 'Education Zone Kashmir' }, mainEntityOfPage: window.location.href };
+      const s = document.createElement('script'); s.type = 'application/ld+json'; s.textContent = JSON.stringify(ld); document.head.appendChild(s);
+    }
+    this.forceUpdate();
+  }
+  renderVals() {
+    const B = this.B, p = this.post;
+    if (!B) return { found: false, notFound: false };
+    if (!p) return { found: false, notFound: true, all: B.POSTS.map(x => ({ href: 'post.dc.html?p=' + x.id, title: x.title })) };
+    const date = new Date(p.date + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+    const related = B.POSTS.filter(x => x.id !== p.id).sort((a, b) => (a.category === p.category ? -1 : 0) - (b.category === p.category ? -1 : 0) || b.date.localeCompare(a.date)).slice(0, 3)
+      .map(x => ({ href: 'post.dc.html?p=' + x.id, title: x.title, excerpt: x.excerpt, category: x.category, minutes: x.minutes }));
+    return {
+      found: true, notFound: false, id: p.id, title: p.title, excerpt: p.excerpt, category: p.category, minutes: p.minutes, date, blocks: p.body, related,
+      copyLabel: this.state.copied ? 'Link copied' : 'Copy link',
+      copyLink: () => { navigator.clipboard && navigator.clipboard.writeText(window.location.href); this.setState({ copied: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>

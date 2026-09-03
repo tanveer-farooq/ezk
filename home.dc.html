@@ -78,12 +78,46 @@
     </div>
   </section>
 
+  <sc-if value="{{ showHeroImage }}" hint-placeholder-val="{{ false }}">
+    <section data-screen-label="Hero image" style="border-bottom:1px solid rgb(211,210,205)">
+      <div style="width:100%;aspect-ratio:24/7;overflow:hidden;background:rgb(245,244,240)"><img src="{{ heroImage.src }}" alt="{{ heroImage.alt }}" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy"></div>
+    </section>
+  </sc-if>
+
   <section data-screen-label="Stats" style="border-bottom:1px solid rgb(211,210,205)">
     <div data-r="grid2" style="max-width:1232px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr)">
       <div style="padding:32px 24px 32px 0;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:6px"><span style="font-size:40px;font-weight:600;letter-spacing:-1px;line-height:1">{{ statCount }}</span><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">Approved colleges listed</span></div>
       <div style="padding:32px 24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:6px"><span style="font-size:40px;font-weight:600;letter-spacing:-1px;line-height:1">{{ statMinFee }}</span><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">Lowest total course fee</span></div>
       <div style="padding:32px 24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:6px"><span style="font-size:40px;font-weight:600;letter-spacing:-1px;line-height:1">{{ statMinFirst }}</span><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">Lowest first installment</span></div>
       <div style="padding:32px 0 32px 24px;display:flex;flex-direction:column;gap:6px"><span style="font-size:40px;font-weight:600;letter-spacing:-1px;line-height:1">{{ statHostel }}</span><span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">Colleges with hostel included</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Fee landscape" data-r="sec" style="padding:88px 0;background:rgb(18,18,18);color:#fff">
+    <div style="max-width:1232px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:48px">
+      <div data-r="stack" style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px">
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:680px">
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.6)">// What the course actually costs</span>
+          <h2 data-r="h2" style="margin:0;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-0.8px;text-wrap:pretty">{{ feeHeadline }}</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:rgba(255,255,255,0.72)">Total course fee across every college on our 2026-27 sheet. Each bar is a real count from that sheet, not a range rounded off for the website.</p>
+        </div>
+        <a href="college-list.dc.html" style="flex-shrink:0;font-size:15px;font-weight:600;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.4);padding-bottom:2px" style-hover="color:rgb(255,205,0);border-bottom-color:rgb(255,205,0);text-decoration:none">See the full fee sheet &rarr;</a>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:1px solid rgba(255,255,255,0.16)">
+        <sc-for list="{{ feeBands }}" as="b" hint-placeholder-count="4">
+          <div style="display:flex;align-items:center;gap:24px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.16)">
+            <span style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:0.02em;color:rgba(255,255,255,0.72);width:150px;flex-shrink:0">{{ b.label }}</span>
+            <div style="flex:1;min-width:0;display:flex;align-items:center"><div style="{{ b.barStyle }}"></div></div>
+            <div style="width:96px;flex-shrink:0;display:flex;align-items:baseline;justify-content:flex-end;gap:6px"><span style="font-size:24px;font-weight:600;letter-spacing:-0.4px;line-height:1">{{ b.count }}</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.02em;text-transform:uppercase;color:rgba(255,255,255,0.6)">{{ b.unit }}</span></div>
+          </div>
+        </sc-for>
+      </div>
+      <div data-r="grid2" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:32px;font-weight:600;letter-spacing:-0.8px;line-height:1">{{ feeMedian }}</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Median total course fee</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:32px;font-weight:600;letter-spacing:-0.8px;line-height:1">{{ statMinFirst }}</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Lowest first installment</span></div>
+        <div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:32px;font-weight:600;letter-spacing:-0.8px;line-height:1">{{ statHostel }}</span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Colleges with hostel included</span></div>
+      </div>
+      <p style="margin:0;font-size:13px;line-height:1.6;color:rgba(255,255,255,0.6);max-width:760px">Fees are for the 2026-27 session and are confirmed in writing before you pay anything. We add no consultancy charge on top of college fees.</p>
     </div>
   </section>
 
@@ -137,18 +171,21 @@
         <h2 data-r="h2" style="margin:0;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-0.8px">Five steps from NEET result to Dhaka</h2>
       </div>
       <ol data-r="grid1" style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid rgb(211,210,205)">
-        <li style="padding:24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:12px;color:rgb(102,102,102)">01</span><span style="font-size:16px;font-weight:600">Free counselling</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">We check NEET eligibility, budget and preferences, then shortlist 3–5 colleges.</span></li>
-        <li style="padding:24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:12px;color:rgb(102,102,102)">02</span><span style="font-size:16px;font-weight:600">Documents &amp; equivalence</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">Marksheets, passport and NEET scorecard go for DGHS equivalence — we file and follow up.</span></li>
-        <li style="padding:24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:12px;color:rgb(102,102,102)">03</span><span style="font-size:16px;font-weight:600">Offer letter &amp; fee</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">You receive the college offer; the first installment is paid directly to the college account.</span></li>
-        <li style="padding:24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:12px;color:rgb(102,102,102)">04</span><span style="font-size:16px;font-weight:600">Visa &amp; travel</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">Student visa at the Bangladesh High Commission, tickets and group travel from Srinagar.</span></li>
-        <li style="padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font-family:'Space Mono',monospace;font-size:12px;color:rgb(102,102,102)">05</span><span style="font-size:16px;font-weight:600">Arrival &amp; hostel</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">Airport pickup, hostel check-in, registration with the Indian High Commission and your batch WhatsApp group.</span></li>
+        <li style="padding:24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:10px"><span style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span style="font-family:'Space Mono',monospace;font-size:30px;line-height:1;color:rgb(18,18,18)">01</span><span style="width:28px;height:3px;background:rgb(255,205,0)"></span></span><span style="font-size:16px;font-weight:600">Free counselling</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">We check NEET eligibility, budget and preferences, then shortlist 3–5 colleges.</span></li>
+        <li style="padding:24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:10px"><span style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span style="font-family:'Space Mono',monospace;font-size:30px;line-height:1;color:rgb(18,18,18)">02</span><span style="width:28px;height:3px;background:rgb(255,205,0)"></span></span><span style="font-size:16px;font-weight:600">Documents &amp; equivalence</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">Marksheets, passport and NEET scorecard go for DGHS equivalence — we file and follow up.</span></li>
+        <li style="padding:24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:10px"><span style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span style="font-family:'Space Mono',monospace;font-size:30px;line-height:1;color:rgb(18,18,18)">03</span><span style="width:28px;height:3px;background:rgb(255,205,0)"></span></span><span style="font-size:16px;font-weight:600">Offer letter &amp; fee</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">You receive the college offer; the first installment is paid directly to the college account.</span></li>
+        <li style="padding:24px;border-right:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:10px"><span style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span style="font-family:'Space Mono',monospace;font-size:30px;line-height:1;color:rgb(18,18,18)">04</span><span style="width:28px;height:3px;background:rgb(255,205,0)"></span></span><span style="font-size:16px;font-weight:600">Visa &amp; travel</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">Student visa at the Bangladesh High Commission, tickets and group travel from Srinagar.</span></li>
+        <li style="padding:24px;display:flex;flex-direction:column;gap:10px"><span style="display:flex;flex-direction:column;gap:8px;align-items:flex-start"><span style="font-family:'Space Mono',monospace;font-size:30px;line-height:1;color:rgb(18,18,18)">05</span><span style="width:28px;height:3px;background:rgb(255,205,0)"></span></span><span style="font-size:16px;font-weight:600">Arrival &amp; hostel</span><span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">Airport pickup, hostel check-in, registration with the Indian High Commission and your batch WhatsApp group.</span></li>
       </ol>
       <a href="admission-process.dc.html" style="font-size:15px;font-weight:600;color:rgb(9,105,218);text-decoration:none" style-hover="text-decoration:underline">See the full process and document checklist →</a>
     </div>
   </section>
 
-  <section data-screen-label="CTA band" style="background:rgb(18,18,18);color:#fff">
-    <div data-r="stack" style="max-width:1232px;margin:0 auto;padding:72px 24px;display:flex;justify-content:space-between;align-items:center;gap:32px">
+  <section data-screen-label="CTA band" style="background:rgb(18,18,18);color:#fff;position:relative;overflow:hidden">
+    <sc-if value="{{ showCtaImage }}" hint-placeholder-val="{{ false }}">
+      <img src="{{ ctaImage.src }}" alt="{{ ctaImage.alt }}" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.3;display:block" loading="lazy">
+    </sc-if>
+    <div data-r="stack" style="max-width:1232px;margin:0 auto;padding:72px 24px;position:relative;display:flex;justify-content:space-between;align-items:center;gap:32px">
       <div style="display:flex;flex-direction:column;gap:12px;max-width:640px">
         <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.6)">// Free counselling · Srinagar &amp; online</span>
         <h2 data-r="h2" style="margin:0;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-0.8px;text-wrap:pretty">Talk to a counsellor who has placed students in these colleges</h2>
@@ -165,15 +202,15 @@
     <div style="max-width:1232px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:40px">
       <div data-r="stack" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px">
         <div style="display:flex;flex-direction:column;gap:12px;max-width:640px">
-          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Student stories</span>
-          <h2 data-r="h2" style="margin:0;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-0.8px">From the Valley to the wards</h2>
+          <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// How we work</span>
+          <h2 data-r="h2" style="margin:0;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-0.8px">What we commit to, in writing</h2>
         </div>
-        <a href="testimonials.dc.html" style="flex-shrink:0;font-size:15px;font-weight:600;color:rgb(9,105,218);text-decoration:none" style-hover="text-decoration:underline">All student stories →</a>
+        <a href="about.dc.html" style="flex-shrink:0;font-size:15px;font-weight:600;color:rgb(9,105,218);text-decoration:none" style-hover="text-decoration:underline">More about how we work →</a>
       </div>
       <div data-r="grid1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
-        <figure style="margin:0;background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:16px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Placeholder — replace with a verified story</span><blockquote style="margin:0;font-size:16px;line-height:1.6;color:rgb(77,77,77);font-style:italic">Add 2–3 sentences from a student about counselling, the admission timeline and the first months in college.</blockquote><figcaption style="display:flex;flex-direction:column;gap:2px;margin-top:auto"><span style="font-size:14px;font-weight:600">Student name</span><span style="font-size:13px;color:rgb(102,102,102)">MBBS · College name · Batch year</span></figcaption></figure>
-        <figure style="margin:0;background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:16px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Placeholder — replace with a verified story</span><blockquote style="margin:0;font-size:16px;line-height:1.6;color:rgb(77,77,77);font-style:italic">A parent's perspective works well here — what worried them, and what the team did about it.</blockquote><figcaption style="display:flex;flex-direction:column;gap:2px;margin-top:auto"><span style="font-size:14px;font-weight:600">Parent name</span><span style="font-size:13px;color:rgb(102,102,102)">Parent of a student at College name</span></figcaption></figure>
-        <figure style="margin:0;background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:16px"><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Placeholder — replace with a verified story</span><blockquote style="margin:0;font-size:16px;line-height:1.6;color:rgb(77,77,77);font-style:italic">A graduate who has cleared FMGE and is practising in India makes the strongest closing story.</blockquote><figcaption style="display:flex;flex-direction:column;gap:2px;margin-top:auto"><span style="font-size:14px;font-weight:600">Doctor name</span><span style="font-size:13px;color:rgb(102,102,102)">MBBS graduate · FMGE cleared · Year</span></figcaption></figure>
+        <div style="background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:14px"><span style="width:28px;height:3px;background:rgb(255,205,0)"></span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// 01 &middot; Fees</span><span style="font-size:17px;font-weight:600">Confirmed in writing before you pay</span><p style="margin:0;font-size:14px;line-height:1.6;color:rgb(77,77,77)">Every figure we quote comes from the college fee sheet, and you get the full installment schedule in writing before any money leaves your account.</p></div>
+        <div style="background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:14px"><span style="width:28px;height:3px;background:rgb(255,205,0)"></span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// 02 &middot; Charges</span><span style="font-size:17px;font-weight:600">No consultancy charge on college fees</span><p style="margin:0;font-size:14px;line-height:1.6;color:rgb(77,77,77)">The first installment is paid directly to the college account. We do not add a margin to the fee and we do not take a share of it.</p></div>
+        <div style="background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:14px"><span style="width:28px;height:3px;background:rgb(255,205,0)"></span><span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// 03 &middot; After admission</span><span style="font-size:17px;font-weight:600">Support that continues past arrival</span><p style="margin:0;font-size:14px;line-height:1.6;color:rgb(77,77,77)">Airport pickup, hostel check-in and a batch WhatsApp group, plus a local coordinator who visits each semester and flags things like student visa renewal.</p></div>
       </div>
     </div>
   </section>
@@ -205,6 +242,9 @@
         <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Common questions</span>
         <h2 data-r="h2" style="margin:0;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-0.8px">Before you call</h2>
         <a href="faq.dc.html" style="font-size:15px;font-weight:600;color:rgb(9,105,218);text-decoration:none;margin-top:8px" style-hover="text-decoration:underline">All 20 questions answered →</a>
+        <sc-if value="{{ showFaqImage }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:20px;width:100%;aspect-ratio:4/5;overflow:hidden;border:1px solid rgb(211,210,205)"><img src="{{ faqImage.src }}" alt="{{ faqImage.alt }}" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy"></div>
+        </sc-if>
       </div>
       <dl style="flex:1;margin:0;display:flex;flex-direction:column;border-top:1px solid rgb(211,210,205)">
         <div style="padding:20px 0;border-bottom:1px solid rgb(211,210,205);display:flex;flex-direction:column;gap:8px"><dt style="font-size:17px;font-weight:600">Is NEET compulsory for MBBS in Bangladesh?</dt><dd style="margin:0;font-size:15px;line-height:1.6;color:rgb(77,77,77)">Yes. The NMC requires every Indian student to have qualified NEET before joining an MBBS course abroad. You need to qualify, not top the exam — the result stays valid for three years.</dd></div>
@@ -221,6 +261,13 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;usdToInr&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:88,&quot;min&quot;:70,&quot;max&quot;:110,&quot;step&quot;:0.5,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Fees&quot;,&quot;unit&quot;:&quot;₹ per USD&quot;}}">
 class Component extends DCLogic {
   state = { q: '', university: '', maxFee: '', girls: false, ready: false };
+  // Photos. Drop a file into img/ and put its filename in src below (e.g. 'img/hero.jpg').
+  // An empty src keeps that slot hidden, so the live page never shows an empty frame.
+  images = {
+    hero: { src: '', alt: 'Medical students on campus in Bangladesh' },
+    faq: { src: '', alt: 'Counselling session at the Education Zone Kashmir office in Srinagar' },
+    cta: { src: '', alt: '' },
+  };
   async componentDidMount() {
     const [M, B] = await Promise.all([
       import(new URL('data/colleges.js', document.baseURI).href),
@@ -233,6 +280,9 @@ class Component extends DCLogic {
     const s = this.state, M = this.M, B = this.B;
     const vals = {
       q: s.q, university: s.university, maxFee: s.maxFee, girls: s.girls,
+      heroImage: this.images.hero, showHeroImage: !!this.images.hero.src,
+      faqImage: this.images.faq, showFaqImage: !!this.images.faq.src,
+      ctaImage: this.images.cta, showCtaImage: !!this.images.cta.src,
       setQ: e => this.setState({ q: e.target.value }),
       setUniversity: e => this.setState({ university: e.target.value }),
       setMaxFee: e => this.setState({ maxFee: e.target.value }),
@@ -255,7 +305,19 @@ class Component extends DCLogic {
     const byFirst = [...M.COLLEGES].filter(c => !byFee.includes(c)).sort((a, b) => a.first - b.first).slice(0, 3);
     const featured = [...byFee.map(c => card(c, 'Lowest total fee')), ...byFirst.map(c => card(c, 'Lowest first installment'))];
     const posts = [...B.POSTS].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 3).map(p => ({ href: 'post.dc.html?p=' + p.id, title: p.title, excerpt: p.excerpt, category: p.category, minutes: p.minutes }));
-    return { ...vals, featured, posts, statCount: String(st.count), statMinFee: M.usd(st.minFee), statMinFirst: M.usd(st.minFirst), statHostel: String(st.hostelIncluded) };
+    const bandDefs = [[30000, 35000], [35000, 40000], [40000, 45000], [45000, 50000]];
+    const bandCounts = bandDefs.map(([lo, hi]) => M.COLLEGES.filter(c => c.total >= lo && c.total < hi).length);
+    const peak = Math.max(...bandCounts), modeIdx = bandCounts.indexOf(peak);
+    const feeBands = bandDefs.map(([lo, hi], i) => ({
+      label: M.usd(lo) + " – " + M.usd(hi),
+      count: String(bandCounts[i]),
+      unit: bandCounts[i] === 1 ? "college" : "colleges",
+      barStyle: "height:26px;min-width:3px;width:" + Math.round((bandCounts[i] / peak) * 100) + "%;background:" + (i === modeIdx ? "rgb(255,205,0)" : "rgba(255,255,255,0.24)"),
+    }));
+    const totalsAsc = M.COLLEGES.map(c => c.total).sort((a, b) => a - b);
+    const feeMedian = M.usd(totalsAsc[Math.floor((totalsAsc.length - 1) / 2)]);
+    const feeHeadline = peak + " of the " + st.count + " colleges sit between " + M.usd(bandDefs[modeIdx][0]) + " and " + M.usd(bandDefs[modeIdx][1]);
+    return { ...vals, featured, posts, statCount: String(st.count), statMinFee: M.usd(st.minFee), statMinFirst: M.usd(st.minFirst), statHostel: String(st.hostelIncluded), feeBands, feeHeadline, feeMedian };
   }
 }
 </script>

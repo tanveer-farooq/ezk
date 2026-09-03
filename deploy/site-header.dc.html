@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fig-tokens.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/brand.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/styles.css">
+<style>@media (max-width:960px){[data-r="hide"]{display:none!important}[data-r="show"]{display:inline-flex!important}}</style>
+</helmet>
+<header style="position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid rgb(211,210,205);font-family:Manrope,-apple-system,sans-serif">
+  <div style="max-width:1232px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;gap:20px">
+    <a href="home.dc.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:rgb(18,18,18);flex-shrink:0">
+      <span style="width:28px;height:28px;background:rgb(255,205,0);display:inline-flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;font-size:11px;color:rgb(18,18,18)">EZ</span>
+      <span style="display:flex;flex-direction:column;line-height:1.1">
+        <span style="font-weight:700;font-size:16px;letter-spacing:-0.2px">Education Zone Kashmir</span>
+        <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.04em;color:rgb(102,102,102);text-transform:uppercase">// MBBS in Bangladesh</span>
+      </span>
+    </a>
+    <nav data-r="hide" aria-label="Main" style="display:flex;gap:2px;margin-left:auto">
+      <sc-for list="{{ nav }}" as="n" hint-placeholder-count="7">
+        <a href="{{ n.href }}" style="position:relative;display:inline-flex;align-items:center;height:64px;padding:0 10px;font-size:14px;font-weight:500;color:rgb(51,51,51);text-decoration:none;white-space:nowrap" style-hover="color:rgb(18,18,18);text-decoration:none">{{ n.label }}<sc-if value="{{ n.active }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;left:10px;right:10px;bottom:-1px;height:3px;background:rgb(255,205,0)"></span></sc-if></a>
+      </sc-for>
+    </nav>
+    <div data-r="hide" style="display:flex;gap:8px;align-items:center;flex-shrink:0">
+      <a href="https://wa.me/919560102100?text=Hi%20Education%20Zone%20Kashmir%2C%20I%20want%20to%20know%20about%20MBBS%20in%20Bangladesh" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1px rgb(212,212,212),0 1px 0 rgba(31,31,31,0.04);font-size:14px;font-weight:600;color:rgb(23,111,44);text-decoration:none" style-hover="background:rgb(246,248,250);text-decoration:none">WhatsApp us</a>
+      <a href="contact.dc.html" style="display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:6px;background:rgb(51,110,246);color:#fff;font-size:14px;font-weight:600;text-decoration:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.08)" style-hover="background:rgb(44,93,208);text-decoration:none">Book free counselling</a>
+    </div>
+    <button data-r="show" onClick="{{ toggle }}" aria-label="Toggle menu" style="display:none;margin-left:auto;align-items:center;height:36px;padding:0 12px;border-radius:6px;border:0;background:#fff;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:14px;font-weight:600;color:rgb(18,18,18);cursor:pointer">{{ menuLabel }}</button>
+  </div>
+  <sc-if value="{{ open }}" hint-placeholder-val="{{ false }}">
+    <div style="border-top:1px solid rgb(211,210,205);background:#fff;padding:8px 24px 20px;display:flex;flex-direction:column">
+      <sc-for list="{{ menu }}" as="m" hint-placeholder-count="0">
+        <a href="{{ m.href }}" style="padding:12px 0;border-bottom:1px solid rgb(231,230,223);font-size:16px;font-weight:500;color:rgb(18,18,18);text-decoration:none">{{ m.label }}</a>
+      </sc-for>
+      <div style="display:flex;gap:8px;margin-top:16px;flex-wrap:wrap">
+        <a href="https://wa.me/919560102100" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-size:14px;font-weight:600;color:rgb(23,111,44);text-decoration:none">WhatsApp us</a>
+        <a href="tel:+919560102100" style="display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-size:14px;font-weight:600;color:rgb(18,18,18);text-decoration:none">Call +91 95601 02100</a>
+        <a href="contact.dc.html" style="display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:6px;background:rgb(51,110,246);font-size:14px;font-weight:600;color:#fff;text-decoration:none">Book free counselling</a>
+      </div>
+    </div>
+  </sc-if>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:72},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;colleges&quot;,&quot;compare&quot;,&quot;eligibility&quot;,&quot;admissions&quot;,&quot;why&quot;,&quot;blog&quot;,&quot;about&quot;,&quot;contact&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Navigation&quot;}}">
+class Component extends DCLogic {
+  state = { open: false };
+  renderVals() {
+    const active = this.props.active || '';
+    const items = [
+      ['colleges', 'Colleges', 'colleges.dc.html'],
+      ['compare', 'Compare', 'compare.dc.html'],
+      ['eligibility', 'Eligibility', 'eligibility.dc.html'],
+      ['admissions', 'Admissions', 'admission-process.dc.html'],
+      ['why', 'Why Bangladesh', 'why-bangladesh.dc.html'],
+      ['blog', 'Blog', 'blog.dc.html'],
+      ['about', 'About', 'about.dc.html'],
+    ];
+    const nav = items.map(([k, label, href]) => ({ k, label, href, active: k === active }));
+    const menu = [{ label: 'Home', href: 'home.dc.html' }, ...nav, { label: 'College list', href: 'college-list.dc.html' }, { label: 'FAQ', href: 'faq.dc.html' }, { label: 'Testimonials', href: 'testimonials.dc.html' }, { label: 'Contact', href: 'contact.dc.html' }];
+    return { nav, menu, open: this.state.open, menuLabel: this.state.open ? 'Close' : 'Menu', toggle: () => this.setState(s => ({ open: !s.open })) };
+  }
+}
+</script>
+</body>
+</html>

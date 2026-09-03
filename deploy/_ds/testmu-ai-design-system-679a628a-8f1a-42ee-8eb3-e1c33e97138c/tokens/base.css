@@ -1,0 +1,5 @@
+/* Base element defaults for TestMu AI surfaces */
+body{font-family:var(--font-sans);color:var(--text-body);background:var(--surface-page);margin:0;-webkit-font-smoothing:antialiased}
+a{color:var(--tm-link);text-decoration:none}
+a:hover{color:var(--tm-blue-hover);text-decoration:underline}
+code,pre{font-family:var(--font-code)}

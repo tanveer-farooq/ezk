@@ -129,7 +129,7 @@
                   <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:24px;font-weight:600;letter-spacing:-0.5px;line-height:1.1">{{ c.first }}</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:rgb(102,102,102)">FIRST INSTALLMENT</span></div>
                 </div>
                 <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid rgb(231,230,223);padding-top:12px">
-                  <span style="font-size:13px;color:rgb(51,51,51)">{{ c.hostel }} · {{ c.distance }}</span>
+                  <span style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-size:13px;color:rgb(51,51,51);min-width:0"><span style="{{ c.hostelStyle }}">{{ c.hostel }}</span><span style="color:rgb(102,102,102)">{{ c.distance }}</span></span>
                   <a href="{{ c.href }}" style="font-size:13px;font-weight:600;color:rgb(9,105,218);text-decoration:none;white-space:nowrap" style-hover="text-decoration:underline">Details →</a>
                 </div>
               </article>
@@ -241,6 +241,13 @@ class Component extends DCLogic {
     });
   }
   toggleIn(key, v) { const arr = this.state[key]; this.set({ [key]: arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v] }); }
+  // Hostel status chip. included = green, paid monthly = amber, not included = red.
+  hostelChip(h) {
+    const tone = h === 'included' ? 'background:rgb(218,251,225);color:rgb(23,111,44)'
+      : h === 'paid' ? 'background:rgb(255,248,197);color:rgb(154,103,0)'
+      : 'background:rgb(255,235,233);color:rgb(209,36,47)';
+    return 'display:inline-block;padding:4px 8px;font-size:13px;font-weight:600;line-height:1.3;' + tone;
+  }
   renderVals() {
     const s = this.state, M = this.M;
     const base = {
@@ -272,7 +279,7 @@ class Component extends DCLogic {
     const results = list.map(c => ({
       href: 'college.dc.html?c=' + c.id, name: c.name, meta: c.city + ' · ' + M.universityShort(c.university),
       tags: M.tags(c), fee: M.usd(c.total), inr: M.inrLakh(c.total, rate), first: M.usd(c.first) + (c.firstNote ? '*' : ''),
-      hostel: M.hostelText(c), hostelShort: c.hostel === 'included' ? 'Included' : c.hostel === 'paid' ? '$' + c.hostelFee + '/mo' : 'Not included', distance: M.distanceText(c),
+      hostel: M.hostelText(c), hostelStyle: this.hostelChip(c.hostel), hostelShort: c.hostel === 'included' ? 'Included' : c.hostel === 'paid' ? '$' + c.hostelFee + '/mo' : 'Not included', distance: M.distanceText(c),
       compared: s.compare.includes(c.id), compareDisabled: full && !s.compare.includes(c.id),
       toggleCompare: () => this.set({ compare: s.compare.includes(c.id) ? s.compare.filter(x => x !== c.id) : [...s.compare, c.id].slice(0, 3) }),
     }));

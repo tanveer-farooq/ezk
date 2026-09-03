@@ -47,6 +47,16 @@
     </div>
   </sc-if>
 </header>
+<sc-if value="{{ showPromo }}" hint-placeholder-val="{{ true }}">
+  <a href="eligibility.dc.html" style="display:block;background:rgb(18,18,18);color:#fff;text-decoration:none;font-family:Manrope,-apple-system,sans-serif;border-bottom:1px solid rgb(211,210,205)" style-hover="background:rgb(33,33,33);text-decoration:none">
+    <div style="max-width:1232px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <span style="width:8px;height:8px;background:rgb(255,205,0);flex-shrink:0"></span>
+      <span data-r="hide" style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.6);flex-shrink:0">// Free check</span>
+      <span style="flex:1 1 340px;min-width:0;font-size:14px;line-height:1.45;color:rgba(255,255,255,0.92)">Not sure if you qualify? Check your NEET eligibility for Bangladesh in about a minute.</span>
+      <span style="margin-left:auto;font-size:14px;font-weight:600;color:rgb(255,205,0);white-space:nowrap">Check eligibility →</span>
+    </div>
+  </a>
+</sc-if>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:72},&quot;active&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;home&quot;,&quot;options&quot;:[&quot;home&quot;,&quot;colleges&quot;,&quot;compare&quot;,&quot;eligibility&quot;,&quot;admissions&quot;,&quot;why&quot;,&quot;blog&quot;,&quot;about&quot;,&quot;contact&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Navigation&quot;}}">
 class Component extends DCLogic {
@@ -64,7 +74,7 @@ class Component extends DCLogic {
     ];
     const nav = items.map(([k, label, href]) => ({ k, label, href, active: k === active }));
     const menu = [{ label: 'Home', href: 'home.dc.html' }, ...nav, { label: 'College list', href: 'college-list.dc.html' }, { label: 'FAQ', href: 'faq.dc.html' }, { label: 'Testimonials', href: 'testimonials.dc.html' }, { label: 'Contact', href: 'contact.dc.html' }];
-    return { nav, menu, open: this.state.open, menuLabel: this.state.open ? 'Close' : 'Menu', toggle: () => this.setState(s => ({ open: !s.open })) };
+    return { nav, menu, showPromo: active !== 'eligibility', open: this.state.open, menuLabel: this.state.open ? 'Close' : 'Menu', toggle: () => this.setState(s => ({ open: !s.open })) };
   }
 }
 </script>

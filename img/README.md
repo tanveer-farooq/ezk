@@ -38,3 +38,35 @@ Save as JPEG, quality ~80, and keep each file under about 300 KB. All three use
 - Get written consent from any student or parent who is identifiable.
 - If you use free stock, Unsplash and Pexels both permit commercial use. Check the
   licence on the individual photo, not just the site.
+
+## College logos (Top colleges section)
+
+The "Top colleges" section on the homepage shows a logo tile per college. While a
+logo is empty the college's initials are shown instead, so the section looks
+finished either way.
+
+To add one: save the file here (e.g. `img/logo-eastern.png`), then in
+`home.dc.html` find `logos = {` in the logic class and fill in the value:
+
+```js
+logos = {
+  'dhaka-national-medical-college': 'img/logo-dhaka-national.png',
+  'eastern-medical-college': '',
+  ...
+};
+```
+
+The keys are college ids from `data/colleges.js`. Adding or removing a key changes
+which colleges appear in the section, and in what order — the fees and names come
+from `data/colleges.js`, so they stay correct on their own.
+
+Logo files: square-ish, at least 200x200, transparent PNG or SVG, on no background
+(the tile supplies the white). They are drawn with `object-fit:contain`, so nothing
+is cropped.
+
+**Before using a college logo:** these are the institutions' trademarks. Using them
+to identify a college you genuinely place students at is normally fine, but it
+should not imply the college endorses or is affiliated with Education Zone Kashmir.
+If a college asks you to stop using its mark, remove it. Never draw or approximate
+a logo you do not have — an invented crest for a real institution is the kind of
+thing that ends a consultancy's credibility.

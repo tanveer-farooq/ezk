@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/brand.css">
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/styles.css">
-<style>body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important}[data-r="h1"]{font-size:34px!important}}</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important;align-items:stretch!important}[data-r="h1"]{font-size:34px!important}}</style>
 </helmet>
 <dc-import name="site-header" active="compare" hint-size="100%,64px"></dc-import>
 <main>
@@ -42,7 +42,7 @@
               <sc-for list="{{ slots }}" as="s" hint-placeholder-count="3">
                 <th style="text-align:left;vertical-align:top;padding:16px;border-bottom:1px solid rgb(211,210,205);border-left:1px solid rgb(211,210,205);font-weight:400">
                   <div style="display:flex;flex-direction:column;gap:10px">
-                    <select value="{{ s.value }}" onChange="{{ s.change }}" style="height:38px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:14px;background:#fff;color:rgb(18,18,18);max-width:100%">
+                    <select value="{{ s.value }}" onChange="{{ s.change }}" style="width:100%;min-width:0;height:38px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:14px;background:#fff;color:rgb(18,18,18);max-width:100%">
                       <option value="">Choose a college…</option>
                       <sc-for list="{{ options }}" as="o" hint-placeholder-count="0"><option value="{{ o.id }}">{{ o.name }}</option></sc-for>
                     </select>

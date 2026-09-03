@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/brand.css">
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/styles.css">
-<style>body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important}[data-r="aside"]{position:static!important;width:100%!important;flex:none!important}[data-r="grid1"]{grid-template-columns:1fr!important}[data-r="h1"]{font-size:34px!important}}</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important;align-items:stretch!important}[data-r="aside"]{position:static!important;width:100%!important;flex:none!important}[data-r="grid1"]{grid-template-columns:1fr!important}[data-r="h1"]{font-size:34px!important}}</style>
 </helmet>
 <dc-import name="site-header" active="eligibility" hint-size="100%,64px"></dc-import>
 <main>
@@ -32,10 +32,10 @@
   <section data-screen-label="Checker" style="padding:40px 0 96px">
     <div data-r="stack" style="max-width:1232px;margin:0 auto;padding:0 24px;display:flex;gap:40px;align-items:flex-start">
       <form onSubmit="{{ noop }}" style="flex:1;min-width:0;display:flex;flex-direction:column;gap:28px">
-        <fieldset style="border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <fieldset style="min-width:0;border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
           <legend style="padding:0 8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">01 · NEET</legend>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">NEET status
-            <select value="{{ neet }}" onChange="{{ setNeet }}" style="height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
+          <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">NEET status
+            <select value="{{ neet }}" onChange="{{ setNeet }}" style="width:100%;min-width:0;height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
               <option value="yes-2026">Qualified NEET 2026</option>
               <option value="yes-2025">Qualified NEET 2025</option>
               <option value="yes-2024">Qualified NEET 2024</option>
@@ -47,45 +47,45 @@
           <span style="font-size:13px;color:rgb(102,102,102);line-height:1.5">Qualifying means scoring at or above the NTA cut-off for your category. Rank does not matter for Bangladesh; the result is valid for three years.</span>
         </fieldset>
 
-        <fieldset style="border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <fieldset style="min-width:0;border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
           <legend style="padding:0 8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">02 · Marks</legend>
           <div data-r="grid1" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 PCB aggregate %
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 PCB aggregate %
               <input type="number" min="0" max="100" inputmode="decimal" value="{{ pcb }}" onChange="{{ setPcb }}" placeholder="e.g. 68" style="height:42px;padding:0 12px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;outline:none" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
             </label>
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 Biology %
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 Biology %
               <input type="number" min="0" max="100" inputmode="decimal" value="{{ bio }}" onChange="{{ setBio }}" placeholder="e.g. 72" style="height:42px;padding:0 12px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;outline:none" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
             </label>
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 10 aggregate %
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 10 aggregate %
               <input type="number" min="0" max="100" inputmode="decimal" value="{{ tenth }}" onChange="{{ setTenth }}" placeholder="e.g. 75" style="height:42px;padding:0 12px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;outline:none" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
             </label>
           </div>
           <span style="font-size:13px;color:rgb(102,102,102);line-height:1.5">Bangladesh converts Indian percentages to its GPA scale: 80%+ = 5.0, 70–79 = 4.0, 60–69 = 3.5, 50–59 = 3.0. You need at least 3.5 in both Class 10 and Class 12 (7.0 combined) and 3.5 in Biology.</span>
         </fieldset>
 
-        <fieldset style="border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <fieldset style="min-width:0;border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
           <legend style="padding:0 8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">03 · Age &amp; gap</legend>
           <div data-r="grid1" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 passing year
-              <select value="{{ year12 }}" onChange="{{ setYear12 }}" style="height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 passing year
+              <select value="{{ year12 }}" onChange="{{ setYear12 }}" style="width:100%;min-width:0;height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
                 <option value="2026">2026</option>
                 <option value="2025">2025</option>
                 <option value="2024">2024</option>
                 <option value="earlier">2023 or earlier</option>
               </select>
             </label>
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Date of birth
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Date of birth
               <input type="date" value="{{ dob }}" onChange="{{ setDob }}" style="height:42px;padding:0 12px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;outline:none;background:#fff;color:rgb(18,18,18)" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
             </label>
           </div>
           <span style="font-size:13px;color:rgb(102,102,102);line-height:1.5">You must be 17 by 31 December 2026, and Bangladesh expects Class 12 to have been passed within the last two years.</span>
         </fieldset>
 
-        <fieldset style="border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <fieldset style="min-width:0;border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
           <legend style="padding:0 8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">04 · Budget (optional)</legend>
           <div data-r="grid1" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Total budget for the course
-              <select value="{{ budget }}" onChange="{{ setBudget }}" style="height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Total budget for the course
+              <select value="{{ budget }}" onChange="{{ setBudget }}" style="width:100%;min-width:0;height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
                 <option value="">Not sure yet</option>
                 <option value="35000">Up to $35,000 (≈ ₹31 L)</option>
                 <option value="40000">Up to $40,000 (≈ ₹35 L)</option>
@@ -93,8 +93,8 @@
                 <option value="50000">Up to $50,000 (≈ ₹44 L)</option>
               </select>
             </label>
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Student
-              <select value="{{ gender }}" onChange="{{ setGender }}" style="height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Student
+              <select value="{{ gender }}" onChange="{{ setGender }}" style="width:100%;min-width:0;height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
                 <option value="any">Prefer not to say</option>
                 <option value="female">Female — include women's colleges</option>
                 <option value="male">Male — exclude women's colleges</option>
@@ -104,7 +104,7 @@
         </fieldset>
       </form>
 
-      <aside data-r="aside" style="flex:0 0 400px;position:sticky;top:88px;display:flex;flex-direction:column;gap:20px;border:1px solid rgb(211,210,205);padding:24px;background:#fff">
+      <aside data-r="aside" style="flex:0 0 400px;min-width:0;max-width:100%;position:sticky;top:88px;display:flex;flex-direction:column;gap:20px;border:1px solid rgb(211,210,205);padding:24px;background:#fff">
         <div style="display:flex;flex-direction:column;gap:8px">
           <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">Your result</span>
           <span style="font-size:28px;font-weight:600;letter-spacing:-0.6px;line-height:1.15">{{ verdict }}</span>

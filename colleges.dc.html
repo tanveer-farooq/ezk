@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fonts.css">
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/brand.css">
 <link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/styles.css">
-<style>body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}input[type=range]{accent-color:rgb(51,110,246)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important}[data-r="rail"]{position:static!important;width:100%!important;flex:none!important}[data-r="grid1"]{grid-template-columns:1fr!important}[data-r="h1"]{font-size:34px!important}}</style>
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}input[type=range]{accent-color:rgb(51,110,246)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important;align-items:stretch!important}[data-r="rail"]{position:static!important;width:100%!important;flex:none!important}[data-r="grid1"]{grid-template-columns:1fr!important}[data-r="h1"]{font-size:34px!important}}</style>
 </helmet>
 <dc-import name="site-header" active="colleges" hint-size="100%,64px"></dc-import>
 <main>
@@ -39,9 +39,9 @@
 
   <section data-screen-label="Dashboard" style="padding:32px 0 96px">
     <div data-r="stack" style="max-width:1232px;margin:0 auto;padding:0 24px;display:flex;gap:32px;align-items:flex-start">
-      <aside data-r="rail" style="flex:0 0 280px;position:sticky;top:80px;display:flex;flex-direction:column;gap:24px;border:1px solid rgb(211,210,205);padding:20px;background:#fff;max-height:calc(100vh - 96px);overflow:auto">
+      <aside data-r="rail" style="flex:0 0 280px;min-width:0;max-width:100%;position:sticky;top:80px;display:flex;flex-direction:column;gap:24px;border:1px solid rgb(211,210,205);padding:20px;background:#fff;max-height:calc(100vh - 96px);overflow:auto">
         <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:15px;font-weight:600">Filters</span><button onClick="{{ reset }}" style="border:0;background:none;padding:0;font-family:Manrope,sans-serif;font-size:13px;font-weight:600;color:rgb(9,105,218);cursor:pointer" style-hover="text-decoration:underline">Reset</button></div>
-        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:rgb(51,51,51)">Search
+        <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:13px;font-weight:600;color:rgb(51,51,51)">Search
           <input value="{{ q }}" onChange="{{ setQ }}" placeholder="College or city" style="height:36px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:14px;outline:none;background:#fff" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
         </label>
         <div style="display:flex;flex-direction:column;gap:8px">
@@ -52,26 +52,26 @@
           <div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:rgb(51,51,51)"><span>Max first installment</span><span style="font-family:'Space Mono',monospace;font-weight:400">{{ maxFirstLabel }}</span></div>
           <input type="range" min="{{ firstMin }}" max="{{ firstMax }}" step="500" value="{{ maxFirst }}" onChange="{{ setMaxFirst }}" style="width:100%">
         </div>
-        <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+        <fieldset style="min-width:0;border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
           <legend style="font-size:13px;font-weight:600;color:rgb(51,51,51);padding:0;margin-bottom:8px">Affiliating university</legend>
           <sc-for list="{{ universities }}" as="u" hint-placeholder-count="6">
             <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:rgb(18,18,18);cursor:pointer"><input type="checkbox" checked="{{ u.checked }}" onChange="{{ u.toggle }}" style="width:16px;height:16px;accent-color:rgb(51,110,246);margin:0"><span style="flex:1">{{ u.label }}</span><span style="font-family:'Space Mono',monospace;font-size:11px;color:rgb(102,102,102)">{{ u.count }}</span></label>
           </sc-for>
         </fieldset>
-        <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+        <fieldset style="min-width:0;border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
           <legend style="font-size:13px;font-weight:600;color:rgb(51,51,51);padding:0;margin-bottom:8px">Hostel</legend>
           <sc-for list="{{ hostelOptions }}" as="h" hint-placeholder-count="4">
             <label style="display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer"><input type="radio" name="hostel" checked="{{ h.checked }}" onChange="{{ h.select }}" style="width:16px;height:16px;accent-color:rgb(51,110,246);margin:0">{{ h.label }}</label>
           </sc-for>
         </fieldset>
-        <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+        <fieldset style="min-width:0;border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
           <legend style="font-size:13px;font-weight:600;color:rgb(51,51,51);padding:0;margin-bottom:8px">Distance from Dhaka</legend>
           <sc-for list="{{ distOptions }}" as="d" hint-placeholder-count="4">
             <label style="display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer"><input type="radio" name="dist" checked="{{ d.checked }}" onChange="{{ d.select }}" style="width:16px;height:16px;accent-color:rgb(51,110,246);margin:0">{{ d.label }}</label>
           </sc-for>
         </fieldset>
         <label style="display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;cursor:pointer;padding:12px;background:rgb(245,244,240);border:1px solid rgb(231,230,223)"><input type="checkbox" checked="{{ girls }}" onChange="{{ setGirls }}" style="width:16px;height:16px;accent-color:rgb(51,110,246);margin:0">Women's colleges only</label>
-        <fieldset style="border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+        <fieldset style="min-width:0;border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
           <legend style="font-size:13px;font-weight:600;color:rgb(51,51,51);padding:0;margin-bottom:8px">City / district</legend>
           <div style="display:flex;flex-direction:column;gap:8px;max-height:220px;overflow:auto;padding-right:4px">
             <sc-for list="{{ regions }}" as="r" hint-placeholder-count="8">
@@ -86,7 +86,7 @@
           <span style="font-size:15px;color:rgb(51,51,51)"><strong style="font-weight:700;color:rgb(18,18,18)">{{ countText }}</strong> · fees in USD, ≈ INR at ₹{{ rateLabel }}/$</span>
           <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
             <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgb(51,51,51)">Sort
-              <select value="{{ sort }}" onChange="{{ setSort }}" style="height:36px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:14px;background:#fff;color:rgb(18,18,18)">
+              <select value="{{ sort }}" onChange="{{ setSort }}" style="width:100%;min-width:0;height:36px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:14px;background:#fff;color:rgb(18,18,18)">
                 <option value="fee-asc">Total fee: low to high</option>
                 <option value="fee-desc">Total fee: high to low</option>
                 <option value="first-asc">First installment: low to high</option>

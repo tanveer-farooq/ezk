@@ -56,11 +56,9 @@
     <section data-screen-label="College body" style="padding:48px 0 96px">
       <div data-r="stack" style="max-width:1232px;margin:0 auto;padding:0 24px;display:flex;gap:40px;align-items:flex-start">
         <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:56px">
-          <div data-r="grid3" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;height:340px">
-            <image-slot id="photo-{{ id }}-main" shape="rounded" radius="7" placeholder="Drop the campus photo"></image-slot>
-            <div style="display:grid;grid-template-rows:1fr 1fr;gap:12px"><image-slot id="photo-{{ id }}-2" shape="rounded" radius="7" placeholder="Hospital / wards"></image-slot><image-slot id="photo-{{ id }}-3" shape="rounded" radius="7" placeholder="Hostel"></image-slot></div>
-            <div style="display:grid;grid-template-rows:1fr 1fr;gap:12px"><image-slot id="photo-{{ id }}-4" shape="rounded" radius="7" placeholder="Lecture hall / lab"></image-slot><image-slot id="photo-{{ id }}-5" shape="rounded" radius="7" placeholder="Indian students"></image-slot></div>
-          </div>
+          <!-- Campus photo grid hidden until real photos exist. To show it, replace this comment with a
+               <div data-r="grid3" style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;height:340px"> holding five
+               <img src="img/<college-id>-1.jpg" alt="" style="width:100%;height:100%;object-fit:cover;border-radius:7px" loading="lazy"> tags. -->
 
           <div style="display:flex;flex-direction:column;gap:20px">
             <div style="display:flex;flex-direction:column;gap:8px">

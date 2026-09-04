@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<base href="/ezk/">
+<link rel="canonical" href="https://tanveer-farooq.github.io/ezk/eligibility/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEET Eligibility Checker for MBBS in Bangladesh 2026–27 | Education Zone Kashmir</title>
+<meta name="description" content="Check in one minute whether you are eligible for MBBS in Bangladesh: NEET qualification, 60% in PCB, Class 10 and 12 GPA, age and gap-year rules — plus how many colleges fit your budget.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fig-tokens.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/brand.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/styles.css">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important;align-items:stretch!important}[data-r="aside"]{position:static!important;width:100%!important;flex:none!important}[data-r="grid1"]{grid-template-columns:1fr!important}[data-r="h1"]{font-size:34px!important}}</style>
+</helmet>
+<dc-import name="site-header" active="eligibility" hint-size="100%,64px"></dc-import>
+<main>
+  <section data-screen-label="Eligibility head" style="background:rgb(245,244,240);border-bottom:1px solid rgb(211,210,205)">
+    <div style="max-width:1232px;margin:0 auto;padding:48px 24px 40px;display:flex;flex-direction:column;gap:12px;max-width:1232px">
+      <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Eligibility checker · Session 2026–27</span>
+      <h1 data-r="h1" style="margin:0;font-weight:500;font-size:44px;line-height:1.08;letter-spacing:-1px;max-width:800px;text-wrap:pretty">Are you eligible for MBBS in Bangladesh?</h1>
+      <p style="margin:0;font-size:16px;line-height:1.6;color:rgb(77,77,77);max-width:720px">Six checks, one minute. The result is indicative — final eligibility is confirmed through the DGHS equivalence certificate, which we process for you.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Checker" style="padding:40px 0 96px">
+    <div data-r="stack" style="max-width:1232px;margin:0 auto;padding:0 24px;display:flex;gap:40px;align-items:flex-start">
+      <form onSubmit="{{ noop }}" style="flex:1;min-width:0;display:flex;flex-direction:column;gap:28px">
+        <fieldset style="min-width:0;border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <legend style="padding:0 8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">01 · NEET</legend>
+          <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">NEET status
+            <select value="{{ neet }}" onChange="{{ setNeet }}" style="width:100%;min-width:0;height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
+              <option value="yes-2026">Qualified NEET 2026</option>
+              <option value="yes-2025">Qualified NEET 2025</option>
+              <option value="yes-2024">Qualified NEET 2024</option>
+              <option value="pending">Appeared / awaiting result</option>
+              <option value="no">Did not qualify</option>
+              <option value="none">Have not appeared</option>
+            </select>
+          </label>
+          <span style="font-size:13px;color:rgb(102,102,102);line-height:1.5">Qualifying means scoring at or above the NTA cut-off for your category. Rank does not matter for Bangladesh; the result is valid for three years.</span>
+        </fieldset>
+
+        <fieldset style="min-width:0;border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <legend style="padding:0 8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">02 · Marks</legend>
+          <div data-r="grid1" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 PCB aggregate %
+              <input type="number" min="0" max="100" inputmode="decimal" value="{{ pcb }}" onChange="{{ setPcb }}" placeholder="e.g. 68" style="height:42px;padding:0 12px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;outline:none" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
+            </label>
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 Biology %
+              <input type="number" min="0" max="100" inputmode="decimal" value="{{ bio }}" onChange="{{ setBio }}" placeholder="e.g. 72" style="height:42px;padding:0 12px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;outline:none" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
+            </label>
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 10 aggregate %
+              <input type="number" min="0" max="100" inputmode="decimal" value="{{ tenth }}" onChange="{{ setTenth }}" placeholder="e.g. 75" style="height:42px;padding:0 12px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;outline:none" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
+            </label>
+          </div>
+          <span style="font-size:13px;color:rgb(102,102,102);line-height:1.5">Bangladesh converts Indian percentages to its GPA scale: 80%+ = 5.0, 70–79 = 4.0, 60–69 = 3.5, 50–59 = 3.0. You need at least 3.5 in both Class 10 and Class 12 (7.0 combined) and 3.5 in Biology.</span>
+        </fieldset>
+
+        <fieldset style="min-width:0;border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <legend style="padding:0 8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">03 · Age &amp; gap</legend>
+          <div data-r="grid1" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Class 12 passing year
+              <select value="{{ year12 }}" onChange="{{ setYear12 }}" style="width:100%;min-width:0;height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
+                <option value="2026">2026</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+                <option value="earlier">2023 or earlier</option>
+              </select>
+            </label>
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Date of birth
+              <input type="date" value="{{ dob }}" onChange="{{ setDob }}" style="height:42px;padding:0 12px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;outline:none;background:#fff;color:rgb(18,18,18)" style-focus="box-shadow:inset 0 0 0 2px rgb(51,110,246)">
+            </label>
+          </div>
+          <span style="font-size:13px;color:rgb(102,102,102);line-height:1.5">You must be 17 by 31 December 2026, and Bangladesh expects Class 12 to have been passed within the last two years.</span>
+        </fieldset>
+
+        <fieldset style="min-width:0;border:1px solid rgb(211,210,205);margin:0;padding:24px;display:flex;flex-direction:column;gap:16px">
+          <legend style="padding:0 8px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">04 · Budget (optional)</legend>
+          <div data-r="grid1" style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Total budget for the course
+              <select value="{{ budget }}" onChange="{{ setBudget }}" style="width:100%;min-width:0;height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
+                <option value="">Not sure yet</option>
+                <option value="35000">Up to $35,000 (≈ ₹31 L)</option>
+                <option value="40000">Up to $40,000 (≈ ₹35 L)</option>
+                <option value="45000">Up to $45,000 (≈ ₹40 L)</option>
+                <option value="50000">Up to $50,000 (≈ ₹44 L)</option>
+              </select>
+            </label>
+            <label style="display:flex;flex-direction:column;min-width:0;gap:6px;font-size:14px;font-weight:600;color:rgb(51,51,51)">Student
+              <select value="{{ gender }}" onChange="{{ setGender }}" style="width:100%;min-width:0;height:42px;padding:0 10px;border-radius:6px;border:0;box-shadow:inset 0 0 0 1px rgb(212,212,212);font-family:Manrope,sans-serif;font-size:15px;background:#fff;color:rgb(18,18,18)">
+                <option value="any">Prefer not to say</option>
+                <option value="female">Female — include women's colleges</option>
+                <option value="male">Male — exclude women's colleges</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+      </form>
+
+      <aside data-r="aside" style="flex:0 0 400px;min-width:0;max-width:100%;position:sticky;top:88px;display:flex;flex-direction:column;gap:20px;border:1px solid rgb(211,210,205);padding:24px;background:#fff">
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">Your result</span>
+          <span style="font-size:28px;font-weight:600;letter-spacing:-0.6px;line-height:1.15">{{ verdict }}</span>
+          <span style="font-size:14px;line-height:1.55;color:rgb(77,77,77)">{{ verdictNote }}</span>
+        </div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid rgb(231,230,223)">
+          <sc-for list="{{ checks }}" as="k" hint-placeholder-count="6">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgb(231,230,223)">
+              <sc-if value="{{ k.pass }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.04em;text-transform:uppercase;padding:3px 6px;min-width:52px;text-align:center;border:1px solid rgb(23,111,44);color:rgb(23,111,44);flex-shrink:0">{{ k.status }}</span></sc-if>
+              <sc-if value="{{ k.fail }}" hint-placeholder-val="{{ false }}"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.04em;text-transform:uppercase;padding:3px 6px;min-width:52px;text-align:center;background:rgb(18,18,18);border:1px solid rgb(18,18,18);color:#fff;flex-shrink:0">{{ k.status }}</span></sc-if>
+              <sc-if value="{{ k.other }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.04em;text-transform:uppercase;padding:3px 6px;min-width:52px;text-align:center;border:1px solid rgb(211,210,205);background:rgb(255,205,0);color:rgb(18,18,18);flex-shrink:0">{{ k.status }}</span></sc-if>
+              <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:600">{{ k.label }}</span><span style="font-size:13px;color:rgb(102,102,102);line-height:1.45">{{ k.detail }}</span></div>
+            </li>
+          </sc-for>
+        </ul>
+        <div style="display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:rgb(245,244,240);border:1px solid rgb(231,230,223)">
+          <span style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">Estimated Bangladesh GPA</span>
+          <span style="font-size:15px;font-weight:600">{{ gpaText }}</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:15px;font-weight:600">{{ budgetText }}</span>
+          <a href="{{ budgetHref }}" style="font-size:14px;font-weight:600;color:rgb(9,105,218);text-decoration:none" style-hover="text-decoration:underline">{{ budgetLink }}</a>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <a href="{{ whatsappHref }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;height:44px;border-radius:6px;background:rgb(51,110,246);color:#fff;font-size:15px;font-weight:600;text-decoration:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,0.08)" style-hover="background:rgb(44,93,208);text-decoration:none">Send my result to a counsellor</a>
+          <a href="contact/" style="display:inline-flex;align-items:center;justify-content:center;height:44px;border-radius:6px;background:#fff;box-shadow:inset 0 0 0 1px rgb(212,212,212),0 1px 0 rgba(31,31,31,0.04);color:rgb(18,18,18);font-size:15px;font-weight:600;text-decoration:none" style-hover="background:rgb(246,248,250);text-decoration:none">Book free counselling</a>
+        </div>
+        <p style="margin:0;font-size:12px;line-height:1.6;color:rgb(102,102,102)">Indicative only. Final eligibility is decided by the DGHS (Bangladesh) equivalence process and the college; NMC rules for Indian students apply.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section data-screen-label="Rules explained" style="background:rgb(245,244,240);border-top:1px solid rgb(211,210,205)">
+    <div style="max-width:1232px;margin:0 auto;padding:72px 24px;display:flex;flex-direction:column;gap:32px">
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:720px">
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// The rules, in plain English</span>
+        <h2 style="margin:0;font-weight:500;font-size:34px;letter-spacing:-0.8px;line-height:1.15">What Bangladesh and the NMC each require</h2>
+      </div>
+      <div data-r="grid1" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+        <div style="background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font-size:17px;font-weight:600">NEET (NMC, India)</span><p style="margin:0;font-size:14px;line-height:1.6;color:rgb(77,77,77)">Mandatory for every Indian student who intends to practise in India after a foreign MBBS. You need to have qualified; the score itself is not used for admission in Bangladesh.</p></div>
+        <div style="background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font-size:17px;font-weight:600">Marks (DGHS, Bangladesh)</span><p style="margin:0;font-size:14px;line-height:1.6;color:rgb(77,77,77)">Minimum GPA 3.5 in both Class 10 and Class 12 (7.0 combined) with GPA 3.5 in Biology — roughly 60% under the conversion table. Physics, Chemistry, Biology and English must be Class 12 subjects.</p></div>
+        <div style="background:#fff;border:1px solid rgb(211,210,205);padding:24px;display:flex;flex-direction:column;gap:10px"><span style="font-size:17px;font-weight:600">Age and gap</span><p style="margin:0;font-size:14px;line-height:1.6;color:rgb(77,77,77)">17 years by 31 December of the admission year. Class 12 should be passed within the last two years — for 2026–27 that means 2024 or later. Older results are considered case by case.</p></div>
+      </div>
+      <p style="margin:0;font-size:13px;line-height:1.6;color:rgb(102,102,102);max-width:860px">Rules summarised from the current DGHS/DGME notification for foreign students and the NMC's FMGL 2021 regulations. Both change from time to time; we re-check them at every counselling session. Read more in <a href="blog/neet-eligibility-mbbs-abroad-bangladesh/">NEET eligibility for MBBS abroad</a>.</p>
+    </div>
+  </section>
+</main>
+<dc-import name="site-footer" hint-size="100%,480px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { neet: 'yes-2026', pcb: '', bio: '', tenth: '', year12: '2026', dob: '', budget: '', gender: 'any' };
+  async componentDidMount() {
+    this.M = await import(new URL('data/colleges.js', document.baseURI).href);
+    this.forceUpdate();
+  }
+  gpa(p) { if (p === '' || isNaN(p)) return null; p = +p; return p >= 80 ? 5 : p >= 70 ? 4 : p >= 60 ? 3.5 : p >= 50 ? 3 : p >= 40 ? 2 : 1; }
+  renderVals() {
+    const s = this.state, M = this.M;
+    const set = k => e => this.setState({ [k]: e.target.value });
+    const num = v => v === '' ? null : +v;
+    const pcb = num(s.pcb), bio = num(s.bio), tenth = num(s.tenth);
+    const checks = [];
+    const push = (label, status, detail) => checks.push({ label, status, detail, pass: status === 'PASS', fail: status === 'FAIL', other: status !== 'PASS' && status !== 'FAIL' });
+    if (s.neet.startsWith('yes')) push('NEET qualified', 'PASS', 'NEET ' + s.neet.slice(4) + ' — valid for admission in 2026–27.');
+    else if (s.neet === 'pending') push('NEET qualified', 'WAIT', 'We can pre-shortlist colleges now and confirm once the result is out.');
+    else push('NEET qualified', 'FAIL', 'The NMC requires a NEET qualification before joining MBBS abroad. Plan for the next NEET.');
+    if (pcb === null) push('Class 12 PCB ≥ 60%', 'FILL', 'Enter your PCB aggregate.'); else if (pcb >= 60) push('Class 12 PCB ≥ 60%', 'PASS', pcb + '% → GPA ' + this.gpa(pcb).toFixed(1)); else push('Class 12 PCB ≥ 60%', 'FAIL', pcb + '% maps to GPA ' + this.gpa(pcb).toFixed(1) + '; Bangladesh needs 3.5. A few colleges consider borderline cases — ask us.');
+    if (bio === null) push('Biology ≥ 60%', 'FILL', 'Enter your Class 12 Biology marks.'); else if (bio >= 60) push('Biology ≥ 60%', 'PASS', bio + '% in Biology.'); else push('Biology ≥ 60%', 'FAIL', 'Biology must be at least GPA 3.5 (60%).');
+    if (tenth === null) push('Class 10 ≥ 60%', 'FILL', 'Enter your Class 10 aggregate.'); else if (tenth >= 60) push('Class 10 ≥ 60%', 'PASS', tenth + '% → GPA ' + this.gpa(tenth).toFixed(1)); else push('Class 10 ≥ 60%', 'FAIL', 'Class 10 needs GPA 3.5 (60%) for the 7.0 combined minimum.');
+    if (!s.dob) push('Age 17 by 31 Dec 2026', 'FILL', 'Enter your date of birth.'); else if (s.dob <= '2009-12-31') push('Age 17 by 31 Dec 2026', 'PASS', 'Born on or before 31 December 2009.'); else push('Age 17 by 31 Dec 2026', 'FAIL', 'You would be under 17 on 31 December 2026 — eligible for the 2027–28 session instead.');
+    if (s.year12 === 'earlier') push('Class 12 within two years', 'FAIL', 'A gap of more than two years is considered case by case by the DGHS. Talk to us before ruling it out.'); else push('Class 12 within two years', 'PASS', 'Passed in ' + s.year12 + '.');
+    const fails = checks.filter(c => c.status === 'FAIL').length, fills = checks.filter(c => c.status === 'FILL' || c.status === 'WAIT').length;
+    let verdict, verdictNote;
+    if (fails) { verdict = 'Not eligible yet'; verdictNote = fails + (fails === 1 ? ' requirement is' : ' requirements are') + ' not met. Some have workarounds — a counsellor can tell you which.'; }
+    else if (fills) { verdict = 'Almost there'; verdictNote = 'Fill in the remaining ' + fills + (fills === 1 ? ' field' : ' fields') + ' to complete the check.'; }
+    else { verdict = 'You are eligible'; verdictNote = 'You meet the NMC and Bangladesh requirements on paper. Next step: shortlist colleges within your budget.'; }
+    const g12 = this.gpa(pcb), g10 = this.gpa(tenth);
+    const gpaText = g12 !== null && g10 !== null ? `Class 12: ${g12.toFixed(1)} · Class 10: ${g10.toFixed(1)} · Combined: ${(g12 + g10).toFixed(1)} (minimum 7.0)` : 'Enter Class 10 and Class 12 marks to estimate';
+    let budgetText = 'Set a budget to see how many colleges fit.', budgetLink = 'Browse all colleges →', budgetHref = 'colleges/';
+    if (M) {
+      const p = new URLSearchParams();
+      let list = M.COLLEGES;
+      if (s.budget) { list = list.filter(c => c.total <= +s.budget); p.set('maxFee', s.budget); }
+      if (s.gender === 'male') list = list.filter(c => !c.girlsOnly);
+      if (s.gender === 'female') p.set('sort', 'fee-asc');
+      budgetHref = 'colleges/' + (p.toString() ? '?' + p.toString() : '');
+      if (s.budget) { budgetText = list.length + ' of ' + M.COLLEGES.length + ' colleges fit a budget of ' + M.usd(+s.budget) + '.'; budgetLink = 'See these colleges →'; }
+    }
+    const summary = `Hi Education Zone Kashmir, I checked my eligibility for MBBS in Bangladesh (2026–27). Result: ${verdict}. NEET: ${s.neet}. PCB: ${s.pcb || '-'}%. Biology: ${s.bio || '-'}%. Class 10: ${s.tenth || '-'}%. Class 12 year: ${s.year12}. Budget: ${s.budget ? '$' + s.budget : 'not decided'}. Please guide me.`;
+    return {
+      neet: s.neet, pcb: s.pcb, bio: s.bio, tenth: s.tenth, year12: s.year12, dob: s.dob, budget: s.budget, gender: s.gender,
+      setNeet: set('neet'), setPcb: set('pcb'), setBio: set('bio'), setTenth: set('tenth'), setYear12: set('year12'), setDob: set('dob'), setBudget: set('budget'), setGender: set('gender'),
+      noop: e => e.preventDefault(), checks, verdict, verdictNote, gpaText, budgetText, budgetLink, budgetHref,
+      whatsappHref: 'https://wa.me/919560102100?text=' + encodeURIComponent(summary),
+    };
+  }
+}
+</script>
+</body>
+</html>

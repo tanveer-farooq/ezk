@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<base href="/ezk/">
+<link rel="canonical" href="https://tanveer-farooq.github.io/ezk/blog/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MBBS in Bangladesh Blog: Fees, Eligibility, FMGE & Student Life | Education Zone Kashmir</title>
+<meta name="description" content="Plain-English guides on MBBS in Bangladesh for Indian students and parents — fee structures, NEET eligibility, documents, FMGE/NExT and life in Dhaka. Written by the Education Zone Kashmir counselling team.">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fig-tokens.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/tokens/brand.css">
+<link rel="stylesheet" href="_ds/testmu-ai-design-system-679a628a-8f1a-42ee-8eb3-e1c33e97138c/styles.css">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0;background:#fff;color:rgb(18,18,18);font-family:Manrope,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}a{color:rgb(9,105,218)}a:hover{color:rgb(44,93,208)}@media (max-width:960px){[data-r="stack"]{flex-direction:column!important;align-items:stretch!important}[data-r="grid1"]{grid-template-columns:1fr!important}[data-r="h1"]{font-size:34px!important}}</style>
+</helmet>
+<dc-import name="site-header" active="blog" hint-size="100%,64px"></dc-import>
+<main>
+  <section data-screen-label="Blog head" style="background:rgb(245,244,240);border-bottom:1px solid rgb(211,210,205)">
+    <div style="max-width:1232px;margin:0 auto;padding:48px 24px 32px;display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:760px">
+        <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Blog</span>
+        <h1 data-r="h1" style="margin:0;font-weight:500;font-size:44px;line-height:1.08;letter-spacing:-1px;text-wrap:pretty">MBBS in Bangladesh, explained for students and parents</h1>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:rgb(77,77,77)">Fees, eligibility, documents, FMGE and what daily life looks like — written by counsellors who place students every session, not by a content farm.</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
+          <sc-if value="{{ cat.active }}" hint-placeholder-val="{{ false }}"><button style="height:34px;padding:0 14px;border:0;border-radius:9999px;background:rgb(18,18,18);color:#fff;font-family:Manrope,sans-serif;font-size:13px;font-weight:600;cursor:default">{{ cat.label }}</button></sc-if>
+          <sc-if value="{{ cat.inactive }}" hint-placeholder-val="{{ true }}"><button onClick="{{ cat.select }}" style="height:34px;padding:0 14px;border:0;border-radius:9999px;background:#fff;box-shadow:inset 0 0 0 1px rgb(212,212,212);color:rgb(51,51,51);font-family:Manrope,sans-serif;font-size:13px;font-weight:600;cursor:pointer" style-hover="background:rgb(246,248,250)">{{ cat.label }}</button></sc-if>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Posts" style="padding:48px 0 96px">
+    <div style="max-width:1232px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:16px">
+      <sc-if value="{{ hasFeatured }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ featured.href }}" data-r="stack" style="display:flex;gap:40px;padding:32px;background:rgb(18,18,18);color:#fff;text-decoration:none" style-hover="background:rgb(30,30,30);text-decoration:none;color:#fff">
+          <div style="flex:1;display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.6)">Latest · {{ featured.category }} · {{ featured.minutes }} min read</span>
+            <span style="font-size:32px;font-weight:500;line-height:1.15;letter-spacing:-0.7px;text-wrap:pretty">{{ featured.title }}</span>
+            <span style="font-size:16px;line-height:1.6;color:rgba(255,255,255,0.75);max-width:640px">{{ featured.excerpt }}</span>
+            <span style="font-size:14px;font-weight:600;color:rgb(255,205,0);margin-top:8px">Read the guide →</span>
+          </div>
+          <div style="flex:0 0 200px;display:flex;flex-direction:column;justify-content:flex-end;font-family:'Space Mono',monospace;font-size:12px;color:rgba(255,255,255,0.6)">{{ featured.date }}</div>
+        </a>
+      </sc-if>
+      <div data-r="grid1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <sc-for list="{{ posts }}" as="p" hint-placeholder-count="5">
+          <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:12px;padding:24px;background:#fff;border:1px solid rgb(211,210,205);text-decoration:none;color:rgb(18,18,18);min-height:220px" style-hover="background:rgb(246,248,250);text-decoration:none;color:rgb(18,18,18)">
+            <span style="font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">{{ p.category }} · {{ p.minutes }} min read</span>
+            <span style="font-size:20px;font-weight:600;line-height:1.3;text-wrap:pretty">{{ p.title }}</span>
+            <span style="font-size:14px;line-height:1.6;color:rgb(77,77,77)">{{ p.excerpt }}</span>
+            <span style="font-family:'Space Mono',monospace;font-size:11px;color:rgb(102,102,102);margin-top:auto;padding-top:8px">{{ p.date }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Blog CTA" style="background:rgb(245,244,240);border-top:1px solid rgb(211,210,205)">
+    <div data-r="stack" style="max-width:1232px;margin:0 auto;padding:56px 24px;display:flex;justify-content:space-between;align-items:center;gap:24px">
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:640px">
+        <h2 style="margin:0;font-weight:500;font-size:28px;letter-spacing:-0.6px">Fee changes and admission dates, straight to your phone</h2>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:rgb(77,77,77)">Join our WhatsApp updates list. Two or three messages a month during admission season, none otherwise.</p>
+      </div>
+      <a href="https://wa.me/919560102100?text=Hi%2C%20please%20add%20me%20to%20the%20MBBS%20Bangladesh%20updates%20list" target="_blank" rel="noopener" style="flex-shrink:0;display:inline-flex;align-items:center;height:44px;padding:0 20px;border-radius:6px;background:rgb(23,111,44);color:#fff;font-size:15px;font-weight:600;text-decoration:none" style-hover="background:rgb(18,90,36);text-decoration:none">Join on WhatsApp</a>
+    </div>
+  </section>
+</main>
+<dc-import name="site-footer" hint-size="100%,480px"></dc-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { cat: 'All' };
+  async componentDidMount() {
+    this.B = await import(new URL('data/blog.js', document.baseURI).href);
+    this.forceUpdate();
+  }
+  fmt(d) { return new Date(d + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }); }
+  renderVals() {
+    const B = this.B, s = this.state;
+    if (!B) return { categories: [], hasFeatured: false, posts: [] };
+    const all = [...B.POSTS].sort((a, b) => b.date.localeCompare(a.date));
+    const cats = ['All', ...new Set(all.map(p => p.category))];
+    const categories = cats.map(c => ({ label: c, active: s.cat === c, inactive: s.cat !== c, select: () => this.setState({ cat: c }) }));
+    const list = s.cat === 'All' ? all : all.filter(p => p.category === s.cat);
+    const card = p => ({ href: 'blog/' + p.id + '/', title: p.title, excerpt: p.excerpt, category: p.category, minutes: p.minutes, date: this.fmt(p.date) });
+    const featured = s.cat === 'All' && list.length ? card(list[0]) : null;
+    const rest = featured ? list.slice(1) : list;
+    return { categories, hasFeatured: !!featured, featured: featured || {}, posts: rest.map(card) };
+  }
+}
+</script>
+</body>
+</html>

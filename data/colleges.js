@@ -29,7 +29,7 @@ export const UNIVERSITIES = {
 
 const C = (id, name, city, region, university, total, first, hostel, campus, km, extra = {}) => ({
   id, name, city, region, university, total, first, hostel, campus, km,
-  firstNote: false, hostelFee: 0, hostelNote: '', girlsOnly: false, est: null, web: null, ...extra,
+  firstNote: false, hostelFee: 0, hostelNote: '', girlsOnly: false, recommended: false, est: null, web: null, ...extra,
 });
 
 export const COLLEGES = [
@@ -39,9 +39,9 @@ export const COLLEGES = [
   C('bangladesh-medical-college', 'Bangladesh Medical College', 'Dhaka', 'Dhaka', 'dhaka', 49000, 25000, 'paid', 'close', 0, { hostelFee: 160 }),
   C('jahurul-islam-medical-college', 'Jahurul Islam Medical College', 'Bajitpur, Kishoreganj', 'Kishoreganj', 'dhaka', 45000, 20200, 'included', 'in', 110),
   C('tairunnessa-medical-college', 'Tairunnessa Memorial Medical College', 'Gazipur', 'Dhaka', 'dhaka', 42000, 12000, 'included', 'girls-in', 30),
-  C('international-medical-college', 'International Medical College', 'Tongi, Gazipur', 'Dhaka', 'dhaka', 44000, 20000, 'included', 'in', 25),
+  C('international-medical-college', 'International Medical College', 'Tongi, Gazipur', 'Dhaka', 'dhaka', 44000, 20000, 'included', 'in', 25, { recommended: true }),
   C('monno-medical-college', 'Monno Medical College', 'Manikganj', 'Manikganj', 'dhaka', 45000, 20000, 'included', 'in', 100),
-  C('us-bangla-medical-college', 'US-Bangla Medical College', 'Narayanganj', 'Dhaka', 'dhaka', 40000, 15000, 'included', 'in', 25),
+  C('us-bangla-medical-college', 'US-Bangla Medical College', 'Narayanganj', 'Dhaka', 'dhaka', 40000, 15000, 'included', 'in', 25, { recommended: true }),
   C('popular-medical-college', 'Popular Medical College', 'Dhaka', 'Dhaka', 'dhaka', 43000, 20000, 'excluded', 'in', 0),
   C('enam-medical-college', 'Enam Medical College', 'Savar, Dhaka', 'Dhaka', 'dhaka', 45000, 20000, 'included', 'in', 25),
   C('shaheed-monsur-ali-medical-college', 'Shaheed Monsur Ali Medical College', 'Dhaka', 'Dhaka', 'dhaka', 43000, 19000, 'included', 'close', 0, { firstNote: true }),
@@ -70,7 +70,7 @@ export const COLLEGES = [
   C('bikrampur-bhuiyan-medical-college', 'Bikrampur Bhuiyan Medical College', 'Munshiganj', 'Dhaka', 'dhaka', 30000, 15000, 'excluded', 'in', 40),
   C('universal-medical-college', 'Universal Medical College', 'Dhaka', 'Dhaka', 'dhaka', 42000, 20000, 'included', 'in', 0),
   C('gonoshasthaya-samaj-vittik-medical-college', 'Gonoshasthaya Samaj Vittik Medical College', 'Savar, Dhaka', 'Dhaka', 'dhaka', 40000, 15000, 'included', 'in', 25),
-  C('shahabuddin-medical-college', 'Shahabuddin Medical College', 'Dhaka', 'Dhaka', 'dhaka', 40000, 25000, 'paid', 'in', 0, { firstNote: true, hostelFee: 120 }),
+  C('shahabuddin-medical-college', 'Shahabuddin Medical College', 'Dhaka', 'Dhaka', 'dhaka', 40000, 25000, 'paid', 'in', 0, { firstNote: true, hostelFee: 120, recommended: true }),
   C('central-medical-college', 'Central Medical College', 'Cumilla', 'Cumilla', 'chittagong', 41000, 15000, 'included', 'in', 100),
   C('monowara-sikder-medical-college', 'Monowara Sikder Medical College', 'Madhupur, Tangail', 'Tangail', 'dhaka', 37000, 13000, 'included', 'in', 160, { firstNote: true }),
   C('diabetic-association-medical-college', 'Diabetic Association Medical College', 'Faridpur', 'Faridpur', 'dhaka', 42000, 15000, 'included', 'in', 130),

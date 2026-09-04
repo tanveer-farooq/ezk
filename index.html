@@ -128,14 +128,15 @@
       <div data-r="stack" style="display:flex;justify-content:space-between;align-items:flex-end;gap:24px">
         <div style="display:flex;flex-direction:column;gap:12px;max-width:680px;min-width:0">
           <span style="font-family:'Space Mono',monospace;font-size:12px;letter-spacing:0.04em;text-transform:uppercase;color:rgb(102,102,102)">// Top colleges</span>
-          <h2 data-r="h2" style="margin:0;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-0.8px;text-wrap:pretty">Five colleges families ask us about most</h2>
-          <p style="margin:0;font-size:16px;line-height:1.6;color:rgb(77,77,77)">Established BM&amp;DC-approved colleges with long-running Indian student intakes. Fees are the same 2026-27 figures we show everywhere else on this site, and all 55 colleges are on the dashboard.</p>
+          <h2 data-r="h2" style="margin:0;font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-0.8px;text-wrap:pretty">The colleges families ask us about most</h2>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:rgb(77,77,77)">Established BM&amp;DC-approved colleges with long-running Indian student intakes. The ones marked Recommended are where our counsellors are placing most students this session. Fees are the same 2026-27 figures we show everywhere else on the site, and all 55 colleges are on the dashboard.</p>
         </div>
         <a href="colleges/" style="flex-shrink:0;font-size:15px;font-weight:600;color:rgb(9,105,218);text-decoration:none" style-hover="text-decoration:underline">Compare all 55 colleges &rarr;</a>
       </div>
-      <div data-r="grid2" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px">
+      <div data-r="grid2" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
         <sc-for list="{{ topColleges }}" as="t" hint-placeholder-count="5">
-          <a href="{{ t.href }}" style="min-width:0;background:#fff;border:1px solid rgb(211,210,205);padding:20px;display:flex;flex-direction:column;gap:14px;text-decoration:none;color:rgb(18,18,18)" style-hover="background:rgb(246,248,250);text-decoration:none;color:rgb(18,18,18)">
+          <a href="{{ t.href }}" style="{{ t.cardStyle }}" style-hover="background:rgb(246,248,250);text-decoration:none;color:rgb(18,18,18)">
+            <sc-if value="{{ t.recommended }}" hint-placeholder-val="{{ true }}"><span style="align-self:flex-start;background:rgb(255,205,0);color:rgb(18,18,18);font-family:'Space Mono',monospace;font-size:10px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:5px 8px">Recommended</span></sc-if>
             <span style="width:56px;height:56px;flex-shrink:0;border:1px solid rgb(211,210,205);background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden">
               <sc-if value="{{ t.hasLogo }}" hint-placeholder-val="{{ false }}"><img src="{{ t.logo }}" alt="{{ t.logoAlt }}" style="width:100%;height:100%;object-fit:contain" loading="lazy"></sc-if>
               <sc-if value="{{ t.noLogo }}" hint-placeholder-val="{{ true }}"><span style="font-family:'Space Mono',monospace;font-size:19px;font-weight:700;letter-spacing:0.02em;color:rgb(18,18,18)">{{ t.mono }}</span></sc-if>
@@ -297,15 +298,18 @@ class Component extends DCLogic {
   // College logos. Drop a file in img/ and put its filename here (e.g. 'img/logo-eastern.png').
   // While a logo is empty the college initials are shown instead, so nothing looks broken.
   logos = {
+    'shahabuddin-medical-college': '',
+    'us-bangla-medical-college': '',
+    'international-medical-college': '',
     'dhaka-national-medical-college': '',
-    'eastern-medical-college': '',
-    'dr-sirajul-islam-medical-college': '',
+    'bangladesh-medical-college': '',
+    'enam-medical-college': '',
     'holy-family-red-crescent-medical-college': '',
     'jahurul-islam-medical-college': '',
   };
   monogram(name) {
     const skip = { 'dr': 1, 'dr.': 1 };
-    const w = name.split(' ').filter(x => x && !skip[x.toLowerCase()]);
+    const w = name.split(' ').join('-').split('-').filter(x => x && !skip[x.toLowerCase()]);
     return ((w[0] || '')[0] || '') + ((w[1] || '')[0] || '');
   }
   images = {
@@ -377,6 +381,10 @@ class Component extends DCLogic {
         meta: c.city + " · " + M.universityLabel(c.university),
         fee: M.usd(c.total), first: M.usd(c.first) + (c.firstNote ? '*' : ''),
         logo, hasLogo: !!logo, noLogo: !logo, logoAlt: c.name + ' logo',
+        recommended: !!c.recommended, plain: !c.recommended,
+        cardStyle: 'min-width:0;background:#fff;padding:' + (c.recommended ? '19px' : '20px')
+          + ';border:' + (c.recommended ? '2px solid rgb(18,18,18)' : '1px solid rgb(211,210,205)')
+          + ';display:flex;flex-direction:column;gap:14px;text-decoration:none;color:rgb(18,18,18)',
         mono: this.monogram(c.name).toUpperCase(),
       };
     });
